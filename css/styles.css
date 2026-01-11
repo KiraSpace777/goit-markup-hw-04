@@ -204,8 +204,9 @@ a {
   border-radius: 4px;
   padding: 16px 32px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  transition-property: background-color color;
-  transition-duration: 250ms;
+  /* transition-property: background-color color; */
+  /* transition-duration: 250ms; */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -216,7 +217,7 @@ a {
 /* ------------MAIN PAGE / features -------------------*/
 
 /* ---HIDEN CONTENT--- */
-.features-title {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -229,20 +230,14 @@ a {
   overflow: hidden;
 }
 
-/* ___________ svg sprite TEST ___________ */
-/* .icon-features {
-  margin: 24px 100px;
-  fill: #4d5ae5;
-} */
-
 .features-list {
   display: flex;
   align-items: center;
   gap: 24px;
 }
+
 .features-item {
   width: calc((100% - 72px) / 4);
-  /* height: 104px; */
 }
 
 .features-subtitle {
@@ -253,6 +248,7 @@ a {
   color: #2e2f42;
   margin-bottom: 8px;
 }
+
 .features-text {
   /* font-weight: 400; */
   font-size: 16px;
@@ -260,6 +256,7 @@ a {
   letter-spacing: 0.02em;
   color: #434455;
 }
+
 .features-icon-container {
   height: 112px;
   display: flex;
@@ -340,11 +337,12 @@ a {
   gap: 24px;
 }
 
-.team-icon-item {
+/* .team-icon-item {} */
+
+.team-icon-link {
   background-color: #4d5ae5;
   border-radius: 50%;
-  width: calc((100% - 72px) / 4);
-  max-width: 40px;
+  width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -352,8 +350,8 @@ a {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-icon-item:hover,
-.team-icon-item:focus {
+.team-icon-link:hover,
+.team-icon-link:focus {
   background-color: #404bbf;
   cursor: pointer;
 }
@@ -385,13 +383,13 @@ a {
 
 .portfolio-item {
   width: calc((100% - 48px) / 3);
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-item:hover .portfolio-overlay-text,
-.portfolio-item:focus .portfolio-overlay-text {
-  transform: translateY(0);
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   cursor: pointer;
 }
 
@@ -430,6 +428,7 @@ a {
 .portfolio-overlay-text {
   position: absolute;
   top: 0;
+  left: 0;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -437,9 +436,15 @@ a {
   color: #f4f4fd;
   background-color: #4d5ae5;
   padding: 40px 32px;
+  width: 100%;
   height: 100%;
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .portfolio-overlay-text,
+.portfolio-item:focus .portfolio-overlay-text {
+  transform: translateY(0%);
 }
 
 /* ------------PAGE FOOTER ----------------------------*/
@@ -490,15 +495,15 @@ a {
 
 .footer-icon-list {
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   gap: 16px;
 }
 
-.footer-icon-item {
+/* .footer-icon-item {} */
+
+.footer-icon-link {
   background-color: #4d5ae5;
   border-radius: 50%;
-  width: calc((100% - 48px) / 4);
+  /* width: calc((100% - 48px) / 4); */
   width: 40px;
   height: 40px;
   display: flex;
@@ -507,8 +512,8 @@ a {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-icon-item:hover,
-.footer-icon-item:focus {
+.footer-icon-link:hover,
+.footer-icon-link:focus {
   background-color: #31d0aa;
   cursor: pointer;
 }
