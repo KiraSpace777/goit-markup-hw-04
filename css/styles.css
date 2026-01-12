@@ -456,6 +456,7 @@ a {
 
 .footer-container-main {
   display: flex;
+  align-items: baseline;
   gap: 120px;
 }
 
